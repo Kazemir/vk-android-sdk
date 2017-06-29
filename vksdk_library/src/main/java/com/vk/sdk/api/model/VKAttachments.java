@@ -116,6 +116,12 @@ public class VKAttachments extends VKList<VKAttachments.VKApiAttachment> impleme
      */
     public static final String TYPE_ALBUM = "album";
 
+    /**
+     * Attachment is a Sticker
+     * @see com.vk.sdk.api.model.VKApiSticker
+     */
+    public static final String TYPE_STICKER = "sticker";
+
 
     public VKAttachments() {
         super();
