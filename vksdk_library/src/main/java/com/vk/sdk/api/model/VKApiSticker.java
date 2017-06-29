@@ -96,4 +96,17 @@ public class VKApiSticker extends VKAttachments.VKApiAttachment implements Ident
             return new VKApiSticker[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiSticker{" +
+                "id=" + id +
+                ", product_id=" + product_id +
+                ", photo_64='" + photo_64 + '\'' +
+                ", photo_128='" + photo_128 + '\'' +
+                ", photo_256='" + photo_256 + '\'' +
+                ", photo_352='" + photo_352 + '\'' +
+                ", photo_512='" + photo_512 + '\'' +
+                '}';
+    }
 }
