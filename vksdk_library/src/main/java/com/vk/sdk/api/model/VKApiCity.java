@@ -28,7 +28,7 @@ import org.json.JSONObject;
 /**
  * A city object describes a city.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiCity extends VKApiModel implements Parcelable, Identifiable {
 
     /**

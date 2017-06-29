@@ -35,7 +35,7 @@ import org.json.JSONObject;
 /**
  * A post object describes a wall post.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifiable, android.os.Parcelable {
 
     /**

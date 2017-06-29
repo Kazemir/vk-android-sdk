@@ -33,6 +33,7 @@ import org.json.JSONObject;
 /**
  * Describes privacy of some VK object
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKPrivacy {
 
     VKPrivacy() {}

@@ -37,7 +37,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * Describes a Wiki page.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiWikiPage extends VKAttachments.VKApiAttachment implements android.os.Parcelable {
 
     /**

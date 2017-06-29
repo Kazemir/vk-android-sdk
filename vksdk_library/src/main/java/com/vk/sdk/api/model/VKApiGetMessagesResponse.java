@@ -26,6 +26,7 @@ import android.os.Parcelable;
 
 import org.json.JSONObject;
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiGetMessagesResponse extends VKApiModel implements Parcelable {
     /**
      * Number of messages

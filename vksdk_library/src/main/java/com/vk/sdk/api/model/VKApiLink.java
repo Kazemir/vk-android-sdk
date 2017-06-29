@@ -37,7 +37,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * A link object describes a link attachment
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiLink extends VKAttachments.VKApiAttachment implements android.os.Parcelable {
 
     /**

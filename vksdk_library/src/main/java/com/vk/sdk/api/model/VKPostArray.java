@@ -30,6 +30,7 @@ import org.json.JSONObject;
  * Array of Post
  * Created by alex_xpert on 29.01.14.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKPostArray extends VKList<VKApiPost> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {

@@ -44,7 +44,7 @@ import java.util.regex.Pattern;
  * @param <T> type of stored values.
  * @see <a href="http://vk.com/dev/list">http://vk.com/dev/list</a>
  */
-@SuppressWarnings({"unchecked", "UnusedDeclaration"})
+@SuppressWarnings({"unchecked", "UnusedDeclaration", "WeakerAccess"})
 public class VKList<T extends VKApiModel & Parcelable & Identifiable> extends VKApiModel implements java.util.List<T>,Parcelable {
 
     /**

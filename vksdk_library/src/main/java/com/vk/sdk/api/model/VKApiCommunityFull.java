@@ -29,7 +29,7 @@ import org.json.JSONObject;
 /**
  * Represents full community profile.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
 
     /**

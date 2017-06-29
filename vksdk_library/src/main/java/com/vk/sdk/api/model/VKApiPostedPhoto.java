@@ -35,7 +35,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * Subclass to directly uploaded wall photo.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPostedPhoto extends VKApiPhoto {
 
     /**

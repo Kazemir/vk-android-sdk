@@ -31,7 +31,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * Describes a photo album
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPhotoAlbum extends VKAttachments.VKApiAttachment implements Parcelable, Identifiable {
 
     /**

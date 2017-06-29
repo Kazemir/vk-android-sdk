@@ -35,7 +35,7 @@ import org.json.JSONObject;
 /**
  * Comment object describes a comment.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiComment extends VKApiModel implements Identifiable, android.os.Parcelable
 {
 

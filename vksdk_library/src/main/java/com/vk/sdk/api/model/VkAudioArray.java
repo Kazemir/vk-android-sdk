@@ -5,6 +5,7 @@ import android.os.Parcel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VkAudioArray extends VKList<VKApiAudio> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {

@@ -34,7 +34,7 @@ import static com.vk.sdk.api.model.ParseUtils.parseLong;
 /**
  * Represents full user profile.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
 
     /**

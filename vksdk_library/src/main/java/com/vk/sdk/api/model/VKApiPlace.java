@@ -30,7 +30,7 @@ import org.json.JSONObject;
 /**
  * A place object describes a location.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPlace extends VKApiModel implements Parcelable, Identifiable {
 
     /**

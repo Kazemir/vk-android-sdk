@@ -29,6 +29,7 @@ import org.json.JSONObject;
 /**
  * Array of API photos objects
 */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKPhotoArray extends VKList<VKApiPhoto> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {

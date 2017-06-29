@@ -32,7 +32,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * A document object describes a document file.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiDocument extends VKApiAttachment implements Parcelable, Identifiable {
 
     /**

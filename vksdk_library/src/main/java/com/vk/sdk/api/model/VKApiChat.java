@@ -37,7 +37,7 @@ import java.util.Arrays;
 /**
  * Chat object describes a user's chat.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiChat extends VKApiModel implements Identifiable, android.os.Parcelable {
 
     /**

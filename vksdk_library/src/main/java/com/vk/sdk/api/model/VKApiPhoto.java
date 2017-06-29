@@ -35,6 +35,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * Describes a photo object from VK.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPhoto extends VKAttachments.VKApiAttachment implements Parcelable, Identifiable {
 
     /**

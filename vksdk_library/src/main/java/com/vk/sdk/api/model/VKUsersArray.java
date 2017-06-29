@@ -26,6 +26,7 @@ import android.os.Parcel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKUsersArray extends VKList<VKApiUserFull> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {

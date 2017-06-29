@@ -37,7 +37,7 @@ import org.json.JSONObject;
 /**
  * User object describes a user profile.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
 
     /**

@@ -32,7 +32,7 @@ import static android.text.TextUtils.isEmpty;
 /**
  * An university object describes an university.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiUniversity extends VKApiModel implements Parcelable, Identifiable {
 
     /**

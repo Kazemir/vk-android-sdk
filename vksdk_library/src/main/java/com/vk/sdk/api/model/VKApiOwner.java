@@ -36,7 +36,7 @@ import org.json.JSONObject;
 /**
  * This class represents owner of some VK object.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiOwner extends VKApiModel implements Identifiable, android.os.Parcelable {
 
     /**

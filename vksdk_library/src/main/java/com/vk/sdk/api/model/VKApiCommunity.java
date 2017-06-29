@@ -30,7 +30,7 @@ import org.json.JSONObject;
 /**
  * Community object describes a community.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiCommunity extends VKApiOwner implements android.os.Parcelable, Identifiable {
 
     private final static String TYPE_GROUP = "group";

@@ -25,6 +25,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import org.json.JSONObject;
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiGetDialogResponse extends VKApiModel implements android.os.Parcelable {
     /**
      * Number of messages to return

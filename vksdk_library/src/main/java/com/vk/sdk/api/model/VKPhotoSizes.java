@@ -42,7 +42,7 @@ import java.util.Collections;
  *  <li>type — notation for copy size and ratio.</li>
  * </ul>
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKPhotoSizes extends VKList<VKApiPhotoSize> implements Parcelable {
 
     private static float sQuality = 1.0f;

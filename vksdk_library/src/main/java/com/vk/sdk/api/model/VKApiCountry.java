@@ -30,7 +30,7 @@ import org.json.JSONObject;
 /**
  * A country object describes a country.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiCountry extends VKApiModel implements Parcelable, Identifiable {
 
     /**

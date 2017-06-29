@@ -42,6 +42,7 @@ import java.util.List;
 /**
  * A list of attachments in {@link VKApiComment}, {@link VKApiPost}, {@link VKApiMessage}
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKAttachments extends VKList<VKAttachments.VKApiAttachment> implements android.os.Parcelable {
 
     /**

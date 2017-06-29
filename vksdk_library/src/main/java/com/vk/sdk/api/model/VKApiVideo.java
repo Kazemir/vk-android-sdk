@@ -41,7 +41,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * A video object describes an video file.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiVideo extends VKAttachments.VKApiAttachment implements Parcelable, Identifiable {
 
     /**

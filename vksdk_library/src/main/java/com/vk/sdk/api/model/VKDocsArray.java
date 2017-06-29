@@ -29,6 +29,7 @@ import org.json.JSONObject;
 /**
  * Array of API docs objects
 */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKDocsArray extends VKList<VKApiDocument> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {

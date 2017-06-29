@@ -8,6 +8,7 @@ import org.json.JSONObject;
 /**
  * Array of API notes objects
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKNotesArray extends VKList<VKApiNote> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {

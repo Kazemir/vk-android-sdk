@@ -17,7 +17,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * Describes information about application in the post.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiApplicationContent extends VKApiAttachment implements android.os.Parcelable {
 
     /**

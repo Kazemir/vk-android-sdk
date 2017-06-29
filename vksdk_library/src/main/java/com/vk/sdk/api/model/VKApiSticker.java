@@ -5,7 +5,7 @@ import android.os.Parcel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiSticker extends VKAttachments.VKApiAttachment implements Identifiable, android.os.Parcelable {
 
     public int id;

@@ -41,7 +41,7 @@ import org.json.JSONObject;
  * These objects are retained by hard links,
  * and never will be saved during parcelization.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public abstract class VKApiModel implements Parcelable {
 
     public JSONObject fields;

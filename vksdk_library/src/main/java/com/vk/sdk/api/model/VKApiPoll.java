@@ -37,7 +37,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * Describes poll on the wall on board.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPoll extends VKAttachments.VKApiAttachment implements android.os.Parcelable {
 
     /**

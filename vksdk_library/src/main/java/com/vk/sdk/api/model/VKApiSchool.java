@@ -32,7 +32,7 @@ import static android.text.TextUtils.isEmpty;
 /**
  * A school object describes a school.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiSchool extends VKApiModel implements Parcelable, Identifiable {
 
     /**

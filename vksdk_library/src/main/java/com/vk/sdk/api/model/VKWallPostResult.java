@@ -26,6 +26,7 @@ import android.os.Parcel;
 /**
  * Specified wall post result
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKWallPostResult extends VKApiModel {
     public int post_id;
 

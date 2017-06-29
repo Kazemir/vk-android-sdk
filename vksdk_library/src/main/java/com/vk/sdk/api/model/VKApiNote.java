@@ -37,7 +37,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * A note object describes a note.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiNote extends VKAttachments.VKApiAttachment implements Identifiable, android.os.Parcelable {
 
     /**

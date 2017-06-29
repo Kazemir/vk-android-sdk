@@ -35,7 +35,7 @@ import org.json.JSONObject;
 /**
  * A message object describes a private message
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiMessage extends VKApiModel implements Identifiable, android.os.Parcelable {
 
     /**

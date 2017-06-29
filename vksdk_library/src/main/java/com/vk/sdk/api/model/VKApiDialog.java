@@ -35,6 +35,7 @@ import org.json.JSONObject;
 /**
  * Dialog object describes a user dialog.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiDialog extends VKApiModel implements Identifiable, android.os.Parcelable {
 
     /**

@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * Application Access Permissions
  * @see <a href="http://vk.com/dev/permissions">http://vk.com/dev/permissions</a>
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKScopes {
 
     private VKScopes() {}

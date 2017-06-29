@@ -36,7 +36,7 @@ import static com.vk.sdk.api.model.VKAttachments.*;
 /**
  * An audio object describes an audio file and contains the following fields.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiAudio extends VKApiAttachment implements Identifiable, android.os.Parcelable {
 
     /**

@@ -96,6 +96,7 @@ import org.json.JSONObject;
  * </code>
  *
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPhotoSize extends VKApiModel implements Comparable<VKApiPhotoSize>, Parcelable, Identifiable {
 
     /**
