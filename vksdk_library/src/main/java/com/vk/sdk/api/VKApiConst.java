@@ -52,6 +52,12 @@ public class VKApiConst {
     public static final String START_MESSAGE_ID = "start_message_id";
     public static final String PREVIEW_LENGTH = "preview_length";
     public static final String UNREAD = "unread";
+    public static final String ACTION_KICK = "chat_kick_user";
+    public static final String ACTION_INVITE = "chat_invite_user";
+    public static final String ACTION_TITLE_UPDATE = "chat_title_update";
+    public static final String ACTION_CREATE = "chat_create";
+    public static final String ACTION_PHOTO_REMOVE = "chat_photo_remove";
+    public static final String ACTION_PHOTO_UPDATE = "chat_photo_update";
 
     //Get subscriptions
     public static final String EXTENDED = "extended";

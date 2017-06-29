@@ -93,6 +93,11 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
      */
     public boolean deleted;
 
+    /**
+    * 	Group chat action
+    */
+    public String action;
+
 	public VKApiMessage(JSONObject from) throws JSONException
 	{
 		parse(from);
@@ -112,6 +117,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
         fwd_messages = new VKList<VKApiMessage>(source.optJSONArray("fwd_messages"), VKApiMessage.class);
         emoji = ParseUtils.parseBoolean(source, "emoji");
         deleted = ParseUtils.parseBoolean(source, "deleted");
+        action = source.optString("action");
         return this;
     }
 
@@ -130,6 +136,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
         this.fwd_messages = in.readParcelable(VKList.class.getClassLoader());
         this.emoji = in.readByte() != 0;
         this.deleted = in.readByte() != 0;
+        this.action = in.readString();
     }
 
     /**
@@ -162,6 +169,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
         dest.writeParcelable(this.fwd_messages, flags);
         dest.writeByte(emoji ? (byte) 1 : (byte) 0);
         dest.writeByte(deleted ? (byte) 1 : (byte) 0);
+        dest.writeString(this.action);
     }
 
     public static Creator<VKApiMessage> CREATOR = new Creator<VKApiMessage>() {
@@ -188,6 +196,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
                 ", fwd_messages=" + fwd_messages +
                 ", emoji=" + emoji +
                 ", deleted=" + deleted +
+                ", action=" + action +
                 '}';
     }
 }
