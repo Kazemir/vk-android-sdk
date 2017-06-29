@@ -146,4 +146,15 @@ public class VKApiLink extends VKAttachments.VKApiAttachment implements android.
     public int getId() {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "VKApiLink{" +
+                "url='" + url + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", image_src='" + image_src + '\'' +
+                ", preview_page='" + preview_page + '\'' +
+                '}';
+    }
 }

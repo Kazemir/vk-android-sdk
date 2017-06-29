@@ -96,4 +96,12 @@ public class VKApiDialog extends VKApiModel implements Identifiable, android.os.
             return new VKApiDialog[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiDialog{" +
+                "unread=" + unread +
+                ", message=" + message +
+                '}';
+    }
 }

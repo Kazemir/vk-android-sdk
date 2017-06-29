@@ -122,4 +122,15 @@ public class VKApiApplicationContent extends VKApiAttachment implements android.
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "VKApiApplicationContent{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", photo_130='" + photo_130 + '\'' +
+                ", photo_604='" + photo_604 + '\'' +
+                ", photo=" + photo +
+                '}';
+    }
 }

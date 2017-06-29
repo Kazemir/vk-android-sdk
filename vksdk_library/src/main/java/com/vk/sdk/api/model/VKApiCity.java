@@ -74,11 +74,6 @@ public class VKApiCity extends VKApiModel implements Parcelable, Identifiable {
     }
 
     @Override
-    public String toString() {
-        return title;
-    }
-
-    @Override
     public int describeContents() {
         return 0;
     }
@@ -99,4 +94,11 @@ public class VKApiCity extends VKApiModel implements Parcelable, Identifiable {
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiCity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

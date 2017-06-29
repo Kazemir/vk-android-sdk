@@ -314,11 +314,6 @@ public class VKApiVideo extends VKAttachments.VKApiAttachment implements Parcela
     }
 
     @Override
-    public String toString() {
-        return title;
-    }
-
-    @Override
     public int describeContents() {
         return 0;
     }
@@ -365,4 +360,39 @@ public class VKApiVideo extends VKAttachments.VKApiAttachment implements Parcela
             return new VKApiVideo[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiVideo{" +
+                "id=" + id +
+                ", owner_id=" + owner_id +
+                ", album_id=" + album_id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", duration=" + duration +
+                ", link='" + link + '\'' +
+                ", date=" + date +
+                ", views=" + views +
+                ", player='" + player + '\'' +
+                ", photo_130='" + photo_130 + '\'' +
+                ", photo_320='" + photo_320 + '\'' +
+                ", photo_640='" + photo_640 + '\'' +
+                ", photo=" + photo +
+                ", access_key='" + access_key + '\'' +
+                ", comments=" + comments +
+                ", can_comment=" + can_comment +
+                ", can_repost=" + can_repost +
+                ", user_likes=" + user_likes +
+                ", repeat=" + repeat +
+                ", likes=" + likes +
+                ", privacy_view=" + privacy_view +
+                ", privacy_comment=" + privacy_comment +
+                ", mp4_240='" + mp4_240 + '\'' +
+                ", mp4_360='" + mp4_360 + '\'' +
+                ", mp4_480='" + mp4_480 + '\'' +
+                ", mp4_720='" + mp4_720 + '\'' +
+                ", mp4_1080='" + mp4_1080 + '\'' +
+                ", external='" + external + '\'' +
+                '}';
+    }
 }

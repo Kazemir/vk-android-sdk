@@ -162,4 +162,17 @@ public class VKApiNote extends VKAttachments.VKApiAttachment implements Identifi
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiNote{" +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", date=" + date +
+                ", comments=" + comments +
+                ", read_comments=" + read_comments +
+                ", view_url='" + view_url + '\'' +
+                '}';
+    }
 }

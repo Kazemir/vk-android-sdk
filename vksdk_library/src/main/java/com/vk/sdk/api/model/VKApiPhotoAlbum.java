@@ -179,11 +179,6 @@ public class VKApiPhotoAlbum extends VKAttachments.VKApiAttachment implements Pa
     }
 
     @Override
-    public String toString() {
-        return title;
-    }
-
-    @Override
     public CharSequence toAttachmentString() {
         return new StringBuilder(TYPE_ALBUM).append(owner_id).append('_').append(id);
     }
@@ -224,4 +219,21 @@ public class VKApiPhotoAlbum extends VKAttachments.VKApiAttachment implements Pa
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiPhotoAlbum{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", size=" + size +
+                ", privacy=" + privacy +
+                ", description='" + description + '\'' +
+                ", owner_id=" + owner_id +
+                ", can_upload=" + can_upload +
+                ", updated=" + updated +
+                ", created=" + created +
+                ", thumb_id=" + thumb_id +
+                ", thumb_src='" + thumb_src + '\'' +
+                ", photo=" + photo +
+                '}';
+    }
 }

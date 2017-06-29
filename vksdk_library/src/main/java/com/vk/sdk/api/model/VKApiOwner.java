@@ -103,4 +103,11 @@ public class VKApiOwner extends VKApiModel implements Identifiable, android.os.P
             return new VKApiOwner[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiOwner{" +
+                "id=" + id +
+                '}';
+    }
 }

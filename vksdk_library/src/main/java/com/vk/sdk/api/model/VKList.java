@@ -470,4 +470,20 @@ public class VKList<T extends VKApiModel & Parcelable & Identifiable> extends VK
     public VKApiModel parse(JSONObject response) throws JSONException {
         throw new JSONException("Operation is not supported while class is generic");
     }
+
+    public String toString() {
+        Iterator<T> it = iterator();
+        if (! it.hasNext())
+            return "[]";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (;;) {
+            T t = it.next();
+            sb.append(t == this ? "(this Collection)" : t);
+            if (! it.hasNext())
+                return sb.append(']').toString();
+            sb.append(',').append(' ');
+        }
+    }
 }

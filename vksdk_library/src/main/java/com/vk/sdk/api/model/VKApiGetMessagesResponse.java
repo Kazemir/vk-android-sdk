@@ -85,4 +85,12 @@ public class VKApiGetMessagesResponse extends VKApiModel implements Parcelable {
             return new VKApiGetMessagesResponse[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiGetMessagesResponse{" +
+                "count=" + count +
+                ", items=" + items +
+                '}';
+    }
 }

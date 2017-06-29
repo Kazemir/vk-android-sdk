@@ -32,6 +32,8 @@ import android.os.Parcel;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+
 /**
  * Chat object describes a user's chat.
  */
@@ -130,4 +132,15 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
             return new VKApiChat[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiChat{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", title='" + title + '\'' +
+                ", admin_id=" + admin_id +
+                ", users=" + Arrays.toString(users) +
+                '}';
+    }
 }

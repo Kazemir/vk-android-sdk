@@ -358,4 +358,14 @@ public class VKApiPhotoSize extends VKApiModel implements Comparable<VKApiPhotoS
     public static VKApiPhotoSize create(String url, int dimension) {
         return create(url, dimension, dimension);
     }
+
+    @Override
+    public String toString() {
+        return "VKApiPhotoSize{" +
+                "src='" + src + '\'' +
+                ", width=" + width +
+                ", height=" + height +
+                ", type=" + type +
+                '}';
+    }
 }

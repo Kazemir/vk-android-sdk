@@ -178,4 +178,20 @@ public class VKApiComment extends VKApiModel implements Identifiable, android.os
 			return new VKApiComment[size];
 		}
 	};
+
+	@Override
+	public String toString() {
+		return "VKApiComment{" +
+				"id=" + id +
+				", from_id=" + from_id +
+				", date=" + date +
+				", text='" + text + '\'' +
+				", reply_to_user=" + reply_to_user +
+				", reply_to_comment=" + reply_to_comment +
+				", likes=" + likes +
+				", user_likes=" + user_likes +
+				", can_like=" + can_like +
+				", attachments=" + attachments +
+				'}';
+	}
 }

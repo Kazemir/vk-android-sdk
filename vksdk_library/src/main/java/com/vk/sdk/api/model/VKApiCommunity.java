@@ -164,11 +164,6 @@ public class VKApiCommunity extends VKApiOwner implements android.os.Parcelable,
     }
 
     @Override
-    public String toString() {
-        return name;
-    }
-
-    @Override
     public int describeContents() {
         return 0;
     }
@@ -227,5 +222,22 @@ public class VKApiCommunity extends VKApiOwner implements android.os.Parcelable,
         public final static int GROUP = 0;
         public final static int PAGE = 1;
         public final static int EVENT = 2;
+    }
+
+    @Override
+    public String toString() {
+        return "VKApiCommunity{" +
+                "name='" + name + '\'' +
+                ", screen_name='" + screen_name + '\'' +
+                ", is_closed=" + is_closed +
+                ", is_admin=" + is_admin +
+                ", admin_level=" + admin_level +
+                ", is_member=" + is_member +
+                ", type=" + type +
+                ", photo_50='" + photo_50 + '\'' +
+                ", photo_100='" + photo_100 + '\'' +
+                ", photo_200='" + photo_200 + '\'' +
+                ", photo=" + photo +
+                '}';
     }
 }

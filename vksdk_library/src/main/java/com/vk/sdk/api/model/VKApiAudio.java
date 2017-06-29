@@ -211,4 +211,19 @@ public class VKApiAudio extends VKApiAttachment implements Identifiable, android
         public final static int ELECTROPOP_AND_DISCO = 22;
     }
 
+    @Override
+    public String toString() {
+        return "VKApiAudio{" +
+                "id=" + id +
+                ", owner_id=" + owner_id +
+                ", artist='" + artist + '\'' +
+                ", title='" + title + '\'' +
+                ", duration=" + duration +
+                ", url='" + url + '\'' +
+                ", lyrics_id=" + lyrics_id +
+                ", album_id=" + album_id +
+                ", genre=" + genre +
+                ", access_key='" + access_key + '\'' +
+                '}';
+    }
 }

@@ -26,6 +26,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+
 import static com.vk.sdk.api.model.ParseUtils.parseBoolean;
 import static com.vk.sdk.api.model.ParseUtils.parseLong;
 
@@ -928,4 +930,59 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
             return new VKApiUserFull[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiUserFull{" +
+                "activity='" + activity + '\'' +
+                ", status_audio=" + status_audio +
+                ", bdate='" + bdate + '\'' +
+                ", city=" + city +
+                ", country=" + country +
+                ", last_seen=" + last_seen +
+                ", universities=" + universities +
+                ", schools=" + schools +
+                ", smoking=" + smoking +
+                ", alcohol=" + alcohol +
+                ", political=" + political +
+                ", life_main=" + life_main +
+                ", people_main=" + people_main +
+                ", inspired_by='" + inspired_by + '\'' +
+                ", langs=" + Arrays.toString(langs) +
+                ", religion='" + religion + '\'' +
+                ", facebook='" + facebook + '\'' +
+                ", facebook_name='" + facebook_name + '\'' +
+                ", livejournal='" + livejournal + '\'' +
+                ", skype='" + skype + '\'' +
+                ", site='" + site + '\'' +
+                ", twitter='" + twitter + '\'' +
+                ", instagram='" + instagram + '\'' +
+                ", mobile_phone='" + mobile_phone + '\'' +
+                ", home_phone='" + home_phone + '\'' +
+                ", screen_name='" + screen_name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", activities='" + activities + '\'' +
+                ", interests='" + interests + '\'' +
+                ", movies='" + movies + '\'' +
+                ", tv='" + tv + '\'' +
+                ", books='" + books + '\'' +
+                ", games='" + games + '\'' +
+                ", about='" + about + '\'' +
+                ", quotes='" + quotes + '\'' +
+                ", can_post=" + can_post +
+                ", can_see_all_posts=" + can_see_all_posts +
+                ", can_write_private_message=" + can_write_private_message +
+                ", wall_comments=" + wall_comments +
+                ", is_banned=" + is_banned +
+                ", is_deleted=" + is_deleted +
+                ", wall_default_owner=" + wall_default_owner +
+                ", verified=" + verified +
+                ", sex=" + sex +
+                ", counters=" + counters +
+                ", occupation=" + occupation +
+                ", relation=" + relation +
+                ", relatives=" + relatives +
+                ", blacklisted_by_me=" + blacklisted_by_me +
+                '}';
+    }
 }

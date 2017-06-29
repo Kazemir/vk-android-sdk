@@ -302,4 +302,29 @@ public class VKApiPhoto extends VKAttachments.VKApiAttachment implements Parcela
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiPhoto{" +
+                "id=" + id +
+                ", album_id=" + album_id +
+                ", owner_id=" + owner_id +
+                ", width=" + width +
+                ", height=" + height +
+                ", text='" + text + '\'' +
+                ", date=" + date +
+                ", photo_75='" + photo_75 + '\'' +
+                ", photo_130='" + photo_130 + '\'' +
+                ", photo_604='" + photo_604 + '\'' +
+                ", photo_807='" + photo_807 + '\'' +
+                ", photo_1280='" + photo_1280 + '\'' +
+                ", photo_2560='" + photo_2560 + '\'' +
+                ", src=" + src +
+                ", user_likes=" + user_likes +
+                ", can_comment=" + can_comment +
+                ", likes=" + likes +
+                ", comments=" + comments +
+                ", tags=" + tags +
+                ", access_key='" + access_key + '\'' +
+                '}';
+    }
 }

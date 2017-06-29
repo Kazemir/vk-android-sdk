@@ -209,4 +209,24 @@ public class VKApiWikiPage extends VKAttachments.VKApiAttachment implements andr
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "VKApiWikiPage{" +
+                "id=" + id +
+                ", group_id=" + group_id +
+                ", creator_id=" + creator_id +
+                ", title='" + title + '\'' +
+                ", source='" + source + '\'' +
+                ", current_user_can_edit=" + current_user_can_edit +
+                ", current_user_can_edit_access=" + current_user_can_edit_access +
+                ", who_can_view=" + who_can_view +
+                ", who_can_edit=" + who_can_edit +
+                ", editor_id=" + editor_id +
+                ", edited=" + edited +
+                ", created=" + created +
+                ", parent='" + parent + '\'' +
+                ", parent2='" + parent2 + '\'' +
+                '}';
+    }
 }

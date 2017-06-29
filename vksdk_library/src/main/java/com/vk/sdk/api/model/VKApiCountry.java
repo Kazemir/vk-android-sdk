@@ -77,11 +77,6 @@ public class VKApiCountry extends VKApiModel implements Parcelable, Identifiable
     }
 
     @Override
-    public String toString() {
-        return title;
-    }
-
-    @Override
     public int describeContents() {
         return 0;
     }
@@ -102,4 +97,11 @@ public class VKApiCountry extends VKApiModel implements Parcelable, Identifiable
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiCountry{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

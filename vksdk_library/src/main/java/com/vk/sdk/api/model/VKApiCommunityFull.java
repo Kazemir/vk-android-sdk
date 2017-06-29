@@ -511,4 +511,29 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
             return new VKApiCommunityFull[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiCommunityFull{" +
+                "city=" + city +
+                ", country=" + country +
+                ", status_audio=" + status_audio +
+                ", place=" + place +
+                ", description='" + description + '\'' +
+                ", wiki_page='" + wiki_page + '\'' +
+                ", members_count=" + members_count +
+                ", counters=" + counters +
+                ", start_date=" + start_date +
+                ", end_date=" + end_date +
+                ", can_post=" + can_post +
+                ", can_see_all_posts=" + can_see_all_posts +
+                ", status='" + status + '\'' +
+                ", contacts=" + contacts +
+                ", links=" + links +
+                ", fixed_post=" + fixed_post +
+                ", verified=" + verified +
+                ", site='" + site + '\'' +
+                ", blacklisted=" + blacklisted +
+                '}';
+    }
 }

@@ -274,4 +274,30 @@ public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifi
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiPost{" +
+                "id=" + id +
+                ", to_id=" + to_id +
+                ", from_id=" + from_id +
+                ", date=" + date +
+                ", text='" + text + '\'' +
+                ", reply_owner_id=" + reply_owner_id +
+                ", reply_post_id=" + reply_post_id +
+                ", friends_only=" + friends_only +
+                ", comments_count=" + comments_count +
+                ", can_post_comment=" + can_post_comment +
+                ", likes_count=" + likes_count +
+                ", user_likes=" + user_likes +
+                ", can_like=" + can_like +
+                ", can_publish=" + can_publish +
+                ", reposts_count=" + reposts_count +
+                ", user_reposted=" + user_reposted +
+                ", post_type='" + post_type + '\'' +
+                ", attachments=" + attachments +
+                ", geo=" + geo +
+                ", signer_id=" + signer_id +
+                ", copy_history=" + copy_history +
+                '}';
+    }
 }

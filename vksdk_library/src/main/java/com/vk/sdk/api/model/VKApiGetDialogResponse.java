@@ -91,4 +91,13 @@ public class VKApiGetDialogResponse extends VKApiModel implements android.os.Par
             return new VKApiGetDialogResponse[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiGetDialogResponse{" +
+                "count=" + count +
+                ", unread_dialogs=" + unread_dialogs +
+                ", items=" + items +
+                '}';
+    }
 }

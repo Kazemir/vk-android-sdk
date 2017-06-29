@@ -222,4 +222,17 @@ public class VKApiPoll extends VKAttachments.VKApiAttachment implements android.
             return new VKApiPoll[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiPoll{" +
+                "id=" + id +
+                ", owner_id=" + owner_id +
+                ", created=" + created +
+                ", question='" + question + '\'' +
+                ", votes=" + votes +
+                ", answer_id=" + answer_id +
+                ", answers=" + answers +
+                '}';
+    }
 }

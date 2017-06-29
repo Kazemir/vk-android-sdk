@@ -139,25 +139,6 @@ public class VKApiUniversity extends VKApiModel implements Parcelable, Identifia
     private String fullName;
 
     @Override
-    public String toString() {
-        if(fullName == null) {
-            StringBuilder result = new StringBuilder(name);
-            result.append(" \'");
-            result.append(String.format("%02d", graduation % 100));
-            if(!isEmpty(faculty_name)) {
-                result.append(", ");
-                result.append(faculty_name);
-            }
-            if(!isEmpty(chair_name)) {
-                result.append(", ");
-                result.append(chair_name);
-            }
-            fullName = result.toString();
-        }
-        return fullName;
-    }
-
-    @Override
     public int getId() {
         return id;
     }
@@ -192,4 +173,21 @@ public class VKApiUniversity extends VKApiModel implements Parcelable, Identifia
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiUniversity{" +
+                "id=" + id +
+                ", country_id=" + country_id +
+                ", city_id=" + city_id +
+                ", name='" + name + '\'' +
+                ", faculty='" + faculty + '\'' +
+                ", faculty_name='" + faculty_name + '\'' +
+                ", chair=" + chair +
+                ", chair_name='" + chair_name + '\'' +
+                ", graduation=" + graduation +
+                ", education_form='" + education_form + '\'' +
+                ", education_status='" + education_status + '\'' +
+                ", fullName='" + fullName + '\'' +
+                '}';
+    }
 }

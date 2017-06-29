@@ -210,17 +210,6 @@ public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
 
     private String full_name;
 
-    /**
-     * @return full user name
-     */
-    @Override
-    public String toString() {
-        if(full_name == null) {
-            full_name = first_name + ' ' + last_name;
-        }
-        return full_name;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -254,4 +243,27 @@ public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
             return new VKApiUser[size];
         }
     };
+
+    /**
+     * @return full user name
+     */
+    @Override
+    public String toString() {
+        return "VKApiUser{" +
+                "first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", online=" + online +
+                ", online_mobile=" + online_mobile +
+                ", photo_50='" + photo_50 + '\'' +
+                ", photo_100='" + photo_100 + '\'' +
+                ", photo_200='" + photo_200 + '\'' +
+                ", photo_200_orig='" + photo_200_orig + '\'' +
+                ", photo_400_orig='" + photo_400_orig + '\'' +
+                ", photo_max='" + photo_max + '\'' +
+                ", photo_max_orig='" + photo_max_orig + '\'' +
+                ", photo_big='" + photo_big + '\'' +
+                ", photo=" + photo +
+                ", full_name='" + full_name + '\'' +
+                '}';
+    }
 }

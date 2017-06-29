@@ -168,11 +168,6 @@ public class VKApiDocument extends VKApiAttachment implements Parcelable, Identi
     }
 
     @Override
-    public String toString() {
-        return title;
-    }
-
-    @Override
     public CharSequence toAttachmentString() {
         StringBuilder result = new StringBuilder(TYPE_DOC).append(owner_id).append('_').append(id);
         if(!TextUtils.isEmpty(access_key)) {
@@ -218,4 +213,23 @@ public class VKApiDocument extends VKApiAttachment implements Parcelable, Identi
             return new VKApiDocument[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiDocument{" +
+                "id=" + id +
+                ", owner_id=" + owner_id +
+                ", title='" + title + '\'' +
+                ", size=" + size +
+                ", ext='" + ext + '\'' +
+                ", url='" + url + '\'' +
+                ", photo_100='" + photo_100 + '\'' +
+                ", photo_130='" + photo_130 + '\'' +
+                ", photo=" + photo +
+                ", access_key='" + access_key + '\'' +
+                ", date=" + date +
+                ", mIsGif=" + mIsGif +
+                ", mIsImage=" + mIsImage +
+                '}';
+    }
 }

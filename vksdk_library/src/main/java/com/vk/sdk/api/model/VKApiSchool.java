@@ -130,34 +130,6 @@ public class VKApiSchool extends VKApiModel implements Parcelable, Identifiable 
     private String fullName;
 
     @Override
-    public String toString() {
-        if(fullName == null) {
-            StringBuilder builder = new StringBuilder(name);
-            if(year_graduated != 0) {
-                builder.append(" \'");
-                builder.append(String.format("%02d", year_graduated % 100));
-            }
-            if(year_from != 0 && year_to != 0) {
-                builder.append(", ");
-                builder.append(year_from);
-                builder.append('-');
-                builder.append(year_to);
-            }
-            if(!isEmpty(clazz)) {
-                builder.append('(');
-                builder.append(clazz);
-                builder.append(')');
-            }
-            if(!isEmpty(speciality)) {
-                builder.append(", ");
-                builder.append(speciality);
-            }
-            fullName = builder.toString();
-        }
-        return fullName;
-    }
-
-    @Override
     public int describeContents() {
         return 0;
     }
@@ -185,4 +157,19 @@ public class VKApiSchool extends VKApiModel implements Parcelable, Identifiable 
         }
     };
 
+    @Override
+    public String toString() {
+        return "VKApiSchool{" +
+                "id=" + id +
+                ", country_id=" + country_id +
+                ", city_id=" + city_id +
+                ", name='" + name + '\'' +
+                ", year_from=" + year_from +
+                ", year_to=" + year_to +
+                ", year_graduated=" + year_graduated +
+                ", clazz='" + clazz + '\'' +
+                ", speciality='" + speciality + '\'' +
+                ", fullName='" + fullName + '\'' +
+                '}';
+    }
 }

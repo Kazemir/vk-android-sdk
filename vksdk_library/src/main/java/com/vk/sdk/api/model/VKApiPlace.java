@@ -151,11 +151,6 @@ public class VKApiPlace extends VKApiModel implements Parcelable, Identifiable {
         dest.writeString(address);
     }
 
-    @Override
-    public String toString() {
-        return address;
-    }
-
     public static Creator<VKApiPlace> CREATOR = new Creator<VKApiPlace>() {
         public VKApiPlace createFromParcel(Parcel source) {
             return new VKApiPlace(source);
@@ -165,4 +160,20 @@ public class VKApiPlace extends VKApiModel implements Parcelable, Identifiable {
             return new VKApiPlace[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiPlace{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", created=" + created +
+                ", checkins=" + checkins +
+                ", updated=" + updated +
+                ", country_id=" + country_id +
+                ", city_id=" + city_id +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

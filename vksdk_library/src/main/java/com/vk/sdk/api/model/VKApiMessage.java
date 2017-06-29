@@ -173,4 +173,21 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
             return new VKApiMessage[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "VKApiMessage{" +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", date=" + date +
+                ", read_state=" + read_state +
+                ", out=" + out +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", attachments=" + attachments +
+                ", fwd_messages=" + fwd_messages +
+                ", emoji=" + emoji +
+                ", deleted=" + deleted +
+                '}';
+    }
 }
