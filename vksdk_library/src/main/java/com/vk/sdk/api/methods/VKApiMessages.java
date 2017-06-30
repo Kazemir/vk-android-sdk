@@ -85,16 +85,7 @@ public class VKApiMessages extends VKApiBase {
     }
 
     /**
-     * Returns chat
-     *
-     * @return Request for load
-     */
-    public VKRequest getChat() {
-        return getChat(VKParameters.from(/*VKApiConst.COUNT, "5"*/));
-    }
-
-    /**
-     * https://vk.com/dev/messages.getDialogs
+     * https://vk.com/dev/messages.getChat
      *
      * @param params use parameters from description with VKApiConst class
      * @return Request for load
