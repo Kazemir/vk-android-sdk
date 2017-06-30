@@ -101,48 +101,6 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /*
-     * https://vk.com/dev/audio.getAlbums
-     */
-    public VKRequest getAlbums() {
-        return getAlbums(null);
-    }
-
-    /*
-     * https://vk.com/dev/audio.getAlbums
-     */
-    public VKRequest getAlbums(VKParameters params) {
-        return prepareRequest("getAlbums", params);
-    }
-
-    /*
-     * https://vk.com/dev/audio.addAlbum
-     */
-    public VKRequest addAlbum(VKParameters params) {
-        return prepareRequest("addAlbum", params);
-    }
-
-    /*
-     * https://vk.com/dev/audio.editAlbum
-     */
-    public VKRequest editAlbum(VKParameters params) {
-        return prepareRequest("editAlbum", params);
-    }
-
-    /*
-     * https://vk.com/dev/audio.deleteAlbum
-     */
-    public VKRequest deleteAlbum(VKParameters params) {
-        return prepareRequest("deleteAlbum", params);
-    }
-
-    /*
-     * https://vk.com/dev/audio.moveToAlbum
-     */
-    public VKRequest moveToAlbum(VKParameters params) {
-        return prepareRequest("moveToAlbum", params);
-    }
-
-    /*
      * https://vk.com/dev/audio.setBroadcast
      */
     public VKRequest setBroadcast(VKParameters params) {
