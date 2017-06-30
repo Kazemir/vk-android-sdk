@@ -146,6 +146,12 @@ public class VKApiConst {
         VKProgressTypeDownload
     }
 
+    //Account
+    public static final String RESTORE_SID = "restore_sid";
+    public static final String CHANGE_PASSWORD_HASH = "change_password_hash";
+    public static final String OLD_PASSWORD = "old_password";
+    public static final String NEW_PASSWORD = "new_password";
+
     //Events
     public static final String VKCaptchaAnsweredEvent = "VKCaptchaAnsweredEvent";
 
