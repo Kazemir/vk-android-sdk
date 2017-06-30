@@ -151,4 +151,45 @@ public class VKApiConst {
 
     //Long Poll
     public static final String NEED_PTS = "need_pts";
+
+    public static final int MESSAGE_FLAGS_SET = 1;
+    public static final int MESSAGE_FLAGS_ADD = 2;
+    public static final int MESSAGE_FLAGS_CLEAR = 3;
+    public static final int MESSAGE_NEW = 4;
+    public static final int MESSAGE_READ_IN = 6;
+    public static final int MESSAGE_READ_OUT = 7;
+    public static final int FRIEND_ONLINE = 8;
+    public static final int FRIEND_OFFLINE = 9;
+    public static final int DIALOG_FLAGS_CLEAR = 10;
+    public static final int DIALOG_FLAGS_SET = 11;
+    public static final int DIALOG_FLAGS_ADD = 12;
+    public static final int MESSAGES_DELETE = 13;
+    public static final int CHAT_CHANGED = 51;
+    public static final int USER_TYPING = 61;
+    public static final int CHAT_USER_TYPING = 62;
+    public static final int CALL_NEW = 70;
+    public static final int DIALOGS_UNREAD_COUNT = 80;
+    public static final int NOTIFICATIONS_CHANGED = 114;
+
+    public static final int FLAG_MESSAGE_UNREAD = 1;
+    public static final int FLAG_MESSAGE_OUTBOX = 2;
+    public static final int FLAG_MESSAGE_REPLIED = 4;
+    public static final int FLAG_MESSAGE_IMPORTANT = 8;
+    public static final int FLAG_MESSAGE_CHAT = 16;
+    public static final int FLAG_MESSAGE_FRIENDS = 32;
+    public static final int FLAG_MESSAGE_SPAM = 64;
+    public static final int FLAG_MESSAGE_DELETED = 128;
+    public static final int FLAG_MESSAGE_FIXED = 256;
+    public static final int FLAG_MESSAGE_MEDIA = 512;
+    public static final int FLAG_MESSAGE_HIDDEN = 65536;
+    public static final int FLAG_DIALOG_IMPORTANT = 1;
+    public static final int FLAG_DIALOG_UNANSWERED = 2;
+
+    public static final int ONLINE_MOBILE = 1;
+    public static final int ONLINE_IPHONE = 2;
+    public static final int ONLINE_IPAD = 3;
+    public static final int ONLINE_ANDROID = 4;
+    public static final int ONLINE_WPHONE = 5;
+    public static final int ONLINE_WINDOWS = 6;
+    public static final int ONLINE_WEB = 7;
 }
