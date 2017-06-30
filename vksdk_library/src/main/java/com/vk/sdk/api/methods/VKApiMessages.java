@@ -28,6 +28,7 @@ import com.vk.sdk.api.VKRequest;
 import com.vk.sdk.api.model.VKApiChat;
 import com.vk.sdk.api.model.VKApiGetDialogResponse;
 import com.vk.sdk.api.model.VKApiGetMessagesResponse;
+import com.vk.sdk.api.model.VKApiLongPollServer;
 
 import org.json.JSONObject;
 
@@ -95,6 +96,21 @@ public class VKApiMessages extends VKApiBase {
             @Override
             public Object createModel(JSONObject object) {
                 return new VKApiChat(object);
+            }
+        });
+    }
+
+    /**
+     * https://vk.com/dev/messages.getLongPollServer
+     *
+     * @param params use parameters from description with VKApiConst class
+     * @return Long Poll server information
+     */
+    public VKRequest getLongPollServer(VKParameters params) {
+        return prepareRequest("getLongPollServer", params, new VKParser() {
+            @Override
+            public Object createModel(JSONObject object) {
+                return new VKApiLongPollServer(object);
             }
         });
     }

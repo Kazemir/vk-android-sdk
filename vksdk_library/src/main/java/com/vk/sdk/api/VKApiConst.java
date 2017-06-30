@@ -148,4 +148,7 @@ public class VKApiConst {
 
     //Events
     public static final String VKCaptchaAnsweredEvent = "VKCaptchaAnsweredEvent";
+
+    //Long Poll
+    public static final String NEED_PTS = "need_pts";
 }
