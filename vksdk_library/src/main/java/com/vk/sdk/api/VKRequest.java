@@ -200,8 +200,8 @@ public class VKRequest extends VKObject {
         this.mMethodParameters = new VKParameters(parameters);
         this.mAttemptsUsed = 0;
 
-        //By default there is 1 attempt for loading.
-        this.attempts = 1;
+        //By default there is 3 attempts for loading.
+        this.attempts = 3;
 
         //If system language is not supported, we use english
         this.mPreferredLang = "en";
