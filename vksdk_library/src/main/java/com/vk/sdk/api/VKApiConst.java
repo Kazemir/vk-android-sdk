@@ -151,6 +151,7 @@ public class VKApiConst {
 
     //Long Poll
     public static final String NEED_PTS = "need_pts";
+    public static final String PTS = "pts";
 
     public static final int MESSAGE_FLAGS_SET = 1;
     public static final int MESSAGE_FLAGS_ADD = 2;
