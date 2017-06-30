@@ -98,6 +98,7 @@ public class VKApiConst {
     public static final String COMPANY = "company";
     public static final String POSITION = "position";
     public static final String GROUP_ID = "group_id";
+    public static final String GROUP_IDS = "group_ids";
 
     public static final String FRIENDS_ONLY = "friends_only";
     public static final String FROM_GROUP = "from_group";
