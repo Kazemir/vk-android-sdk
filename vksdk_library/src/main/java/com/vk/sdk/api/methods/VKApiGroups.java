@@ -10,6 +10,7 @@ import com.vk.sdk.api.model.VKUsersArray;
  * Section groups
  * Created by alex_xpert on 29.01.14.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiGroups extends VKApiBase {
 
     public VKRequest isMember(VKParameters params) {

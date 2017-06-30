@@ -30,6 +30,7 @@ import com.vk.sdk.util.VKUtil;
 /**
  * Builds requests for API.photos part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiPhotos extends VKApiBase {
     public VKRequest getUploadServer(long albumId) {
         return prepareRequest("getUploadServer", VKUtil.paramsFrom(VKApiConst.ALBUM_ID, String.valueOf(albumId)));

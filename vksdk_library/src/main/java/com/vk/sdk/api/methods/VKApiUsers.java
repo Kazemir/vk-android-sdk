@@ -34,6 +34,7 @@ import org.json.JSONObject;
 /**
  * Builds requests for API.users part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiUsers extends VKApiBase {
     /**
      * Returns basic information about current user

@@ -34,6 +34,7 @@ import java.io.File;
 /**
  * Builds requests for API.docs part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiDocs extends VKApiBase {
 
     /**

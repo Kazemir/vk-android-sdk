@@ -31,6 +31,7 @@ import com.vk.sdk.api.model.VKWallPostResult;
 /**
  * Builds requests for API.wall part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiWall extends VKApiBase {
     public static final String EXTENDED = VKApiConst.EXTENDED;
 

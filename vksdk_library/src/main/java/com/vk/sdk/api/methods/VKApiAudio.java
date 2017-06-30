@@ -7,6 +7,7 @@ import com.vk.sdk.api.model.VkAudioArray;
 /**
  * Builds requests for API.audio part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiAudio extends VKApiBase {
     /*
      * https://vk.com/dev/audio.get

@@ -24,6 +24,7 @@ package com.vk.sdk.api;
 /**
  * Constants for api. List is not full
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiConst {
     //Commons
     public static final String USER_ID = "user_id";

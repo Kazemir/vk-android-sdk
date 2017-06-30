@@ -34,6 +34,7 @@ import org.json.JSONObject;
 /**
  * Builds requests for API.messages part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiMessages extends VKApiBase {
     /**
      * Returns messages current user

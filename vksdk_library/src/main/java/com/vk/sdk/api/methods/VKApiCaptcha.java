@@ -26,6 +26,7 @@ import com.vk.sdk.api.VKRequest;
 /**
  * Contains single method for forcing captcha
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiCaptcha extends VKApiBase {
     public VKRequest force() {
         return prepareRequest("force", null);

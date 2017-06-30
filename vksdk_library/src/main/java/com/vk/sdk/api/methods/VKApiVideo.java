@@ -7,6 +7,7 @@ import com.vk.sdk.api.model.VKVideoArray;
 /**
  * Builds request for API.video part
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiVideo extends VKApiBase {
     /*
      * https://vk.com/dev/video.get

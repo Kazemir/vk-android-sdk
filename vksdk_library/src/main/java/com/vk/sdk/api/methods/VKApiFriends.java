@@ -8,6 +8,7 @@ import com.vk.sdk.api.model.VKUsersArray;
  * Section friends
  * Created by alex_xpert on 29.01.14.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKApiFriends extends VKApiBase {
 
     public VKRequest get(VKParameters params) {
