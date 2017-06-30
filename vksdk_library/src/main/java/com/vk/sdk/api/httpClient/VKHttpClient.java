@@ -79,7 +79,7 @@ public class VKHttpClient {
      */
     public static VKHTTPRequest requestWithVkRequest(@NonNull VKRequest vkRequest) {
         VKAccessToken token = VKAccessToken.currentToken();
-        VKHTTPRequest result = new VKHTTPRequest(String.format(Locale.US, "http%s://api.vk.com/method/%s", vkRequest.secure || (token != null && token.httpsRequired) ? "s" : "", vkRequest.methodName));
+        VKHTTPRequest result = new VKHTTPRequest("https://api.vk.com/method/" + vkRequest.methodName);
         result.headers = getDefaultHeaders();
         result.setVkParameters(vkRequest.getPreparedParameters());
         return result;

@@ -37,7 +37,6 @@ public class VKApiConst {
 
     //auth
     public static final String VERSION = "v";
-    public static final String HTTPS = "https";
     public static final String LANG = "lang";
     public static final String ACCESS_TOKEN = "access_token";
     public static final String SIG = "sig";

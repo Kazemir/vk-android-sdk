@@ -124,12 +124,6 @@ public class VKScopes {
      * Access to API at any time from a third party server.
      */
     public final static String OFFLINE = "offline"; 
-    
-    /**
-     * Possibility to make API requests without HTTPS. <br />
-     * <b>Note that this functionality is under testing and can be changed.</b>
-     */
-    public final static String NOHTTPS = "nohttps";
 
 	/**
 	 * Access to user email (if available/allowed by user)

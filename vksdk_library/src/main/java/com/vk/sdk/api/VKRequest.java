@@ -137,11 +137,6 @@ public class VKRequest extends VKObject {
     public int attempts;
 
     /**
-     * Use HTTPS requests (by default is YES). If http-request is impossible (user denied no https access), SDK will load https version
-     */
-    public boolean secure;
-
-    /**
      * Sets current system language as default for API data
      */
     public boolean useSystemLanguage;
@@ -205,7 +200,6 @@ public class VKRequest extends VKObject {
         this.mMethodParameters = new VKParameters(parameters);
         this.mAttemptsUsed = 0;
 
-        this.secure = true;
         //By default there is 1 attempt for loading.
         this.attempts = 1;
 
@@ -272,26 +266,12 @@ public class VKRequest extends VKObject {
             VKAccessToken token = VKAccessToken.currentToken();
             if (token != null) {
                 mPreparedParameters.put(VKApiConst.ACCESS_TOKEN, token.accessToken);
-                if (token.httpsRequired) {
-                    this.secure = true;
-                }
             }
             //Set actual version of API
             mPreparedParameters.put(VKApiConst.VERSION, VKSdk.getApiVersion());
             //Set preferred language for request
             mPreparedParameters.put(VKApiConst.LANG, getLang());
-
-            if (this.secure) {
-                //If request is secure, we need all urls as https
-                mPreparedParameters.put(VKApiConst.HTTPS, "1");
-            }
-            if (token != null && token.secret != null) {
-                //If it not, generate signature of request
-                String sig = generateSig(token);
-                mPreparedParameters.put(VKApiConst.SIG, sig);
-            }
             //From that moment you cannot modify parameters.
-            //Specially for http loading
         }
         return mPreparedParameters;
     }
@@ -508,16 +488,6 @@ public class VKRequest extends VKObject {
         mMethodParameters.putAll(extraParameters);
     }
 
-    private String generateSig(VKAccessToken token) {
-        //Read description here https://vk.com/dev/api_nohttps
-        //At first, we need key-value pairs in order of request
-        String queryString = VKStringJoiner.joinParams(mPreparedParameters);
-        //Then we generate "request string" /method/{METHOD_NAME}?{GET_PARAMS}{POST_PARAMS}
-        queryString = String.format(Locale.US, "/method/%s?%s", methodName, queryString);
-        return VKUtil.md5(queryString + token.secret);
-
-    }
-
     private boolean processCommonError(final VKError error) {
         //TODO: lock thread, if ui required, release then
         if (error.errorCode == VKError.VK_API_ERROR) {
@@ -528,7 +498,6 @@ public class VKRequest extends VKObject {
             if (apiError.errorCode == 16) {
                 VKAccessToken token = VKAccessToken.currentToken();
                 if (token != null) {
-                    token.httpsRequired = true;
                     token.save();
                 }
                 repeat();
@@ -676,6 +645,6 @@ public class VKRequest extends VKObject {
             builder.append(key).append("=").append(parameters.get(key)).append(" ");
         }
         builder.append("}");
-        return  builder.toString();
+        return builder.toString();
     }
 }

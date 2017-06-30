@@ -217,14 +217,9 @@ Requests Syntax
 
 2) Request with parameters.
 `VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.USER_IDS, "1,2"));`
-
-3) Http (not https) request (only if scope VK_PER_NOHTTPS has been passed).
-```
-VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.USER_IDS, "1,2"));
-request.secure = NO;
 ```
 
-4) Request with predetermined maximum number of attempts.
+3) Request with predetermined maximum number of attempts.
 ```
 VKRequest request = VKApi.wall().post(VKParameters.from(VKApiConst.OWNER_ID, "-60479154", VKApiConst.MESSAGE, "Hello, world!"));
 request.attempts = 10;
@@ -233,10 +228,10 @@ request.attempts = 10;
 ```
 It will take 10 attempts until succeeds or an API error occurs. 
 
-5) Request that calls a method of VK API.
+4) Request that calls a method of VK API.
 `VKRequest request = new VKRequest("friends.get", VKParameters.from(VKApiConst.FIELDS, "sex,bdate,city"));`
 
-6) Request for uploading photos on user wall.
+5) Request for uploading photos on user wall.
 ```
 final Bitmap photo = getPhoto();
 VKRequest request = VKApi.uploadWallPhotoRequest(new VKUploadImage(photo, VKImageParameters.jpgImage(0.9f)), 0, 60479154);

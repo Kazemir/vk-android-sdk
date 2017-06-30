@@ -40,12 +40,11 @@ import java.util.Map;
 /**
  * Presents VK API access token that used for loading API methods and other stuff.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class VKAccessToken {
     public static final String ACCESS_TOKEN = "access_token";
     public static final String EXPIRES_IN = "expires_in";
     public static final String USER_ID = "user_id";
-    public static final String SECRET = "secret";
-    public static final String HTTPS_REQUIRED = "https_required";
     public static final String CREATED = "created";
     public static final String SUCCESS = "success";
 	public static final String EMAIL = "email";
@@ -63,14 +62,6 @@ public class VKAccessToken {
      * Current user id for this token
      */
     public String userId = null;
-    /**
-     * User secret to sign requests (if nohttps used)
-     */
-    public String secret = null;
-    /**
-     * If user sets "Always use HTTPS" setting in his profile, it will be true
-     */
-    public boolean httpsRequired = false;
 
     /**
      * Indicates time of token creation
@@ -144,12 +135,6 @@ public class VKAccessToken {
             params.put(SCOPE, TextUtils.join(",", scope.keySet()));
         }
 
-        if (secret != null) {
-            params.put(SECRET, secret);
-        }
-        if (httpsRequired) {
-            params.put(HTTPS_REQUIRED, "1");
-        }
         if (email != null) {
             params.put(EMAIL, email);
         }
@@ -193,9 +178,7 @@ public class VKAccessToken {
         try {
             token.accessToken = parameters.get(ACCESS_TOKEN);
             token.userId = parameters.get(USER_ID);
-            token.secret = parameters.get(SECRET);
             token.email = parameters.get(EMAIL);
-            token.httpsRequired = false;
             if (parameters.get(EXPIRES_IN) != null) { token.expiresIn = Integer.parseInt(parameters.get(EXPIRES_IN)); }
 
             String scope = parameters.get(SCOPE);
@@ -205,12 +188,6 @@ public class VKAccessToken {
                     scopeMap.put(s, true);
                 }
                 token.scope = scopeMap;
-            }
-
-            if (parameters.containsKey(HTTPS_REQUIRED)) {
-                token.httpsRequired = parameters.get(HTTPS_REQUIRED).equals("1");
-            } else if (token.secret == null) {
-                token.httpsRequired = true;
             }
 
             if (parameters.containsKey(CREATED)) {
