@@ -42,6 +42,13 @@ public class VKApiConst {
     public static final String ACCESS_TOKEN = "access_token";
     public static final String SIG = "sig";
 
+    //friends
+    public static final String ORDER = "order";
+    public static final String HINTS = "hints";
+    public static final String RANDOM = "random";
+    public static final String MOBILE = "mobile";
+    public static final String NAME = "name";
+
     //get users
     public static final String NAME_CASE = "name_case";
 
