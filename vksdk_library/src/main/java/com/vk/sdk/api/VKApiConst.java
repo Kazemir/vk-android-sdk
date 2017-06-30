@@ -67,6 +67,7 @@ public class VKApiConst {
     public static final String ACTION_CREATE = "chat_create";
     public static final String ACTION_PHOTO_REMOVE = "chat_photo_remove";
     public static final String ACTION_PHOTO_UPDATE = "chat_photo_update";
+    public static final String PEER_ID = "peer_id";
 
     //Get subscriptions
     public static final String EXTENDED = "extended";
