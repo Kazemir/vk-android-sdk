@@ -108,6 +108,11 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
     public static final String CAN_WRITE_PRIVATE_MESSAGE = "can_write_private_message";
 
     /**
+     * Filed is_friend from VK fields set
+     */
+    public static final String IS_FRIEND = "is_friend";
+
+    /**
      * Filed relation from VK fields set
      */
     public static final String RELATION = "relation";
@@ -388,6 +393,11 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
     public boolean can_write_private_message;
 
     /**
+     * Information whether this user is added to friends list of current account.
+     */
+    public boolean is_friend;
+
+    /**
      * Information whether user can comment wall posts.
      */
     public boolean wall_comments;
@@ -523,6 +533,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         can_see_all_posts = parseBoolean(user, CAN_SEE_ALL_POSTS);
         blacklisted_by_me = parseBoolean(user, BLACKLISTED_BY_ME);
         can_write_private_message = parseBoolean(user, CAN_WRITE_PRIVATE_MESSAGE);
+        is_friend = parseBoolean(user, IS_FRIEND);
         wall_comments = parseBoolean(user, WALL_DEFAULT);
         String deactivated = user.optString("deactivated");
         is_deleted = "deleted".equals(deactivated);
@@ -856,6 +867,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         dest.writeByte(can_post ? (byte) 1 : (byte) 0);
         dest.writeByte(can_see_all_posts ? (byte) 1 : (byte) 0);
         dest.writeByte(can_write_private_message ? (byte) 1 : (byte) 0);
+        dest.writeByte(is_friend ? (byte) 1 : (byte) 0);
         dest.writeByte(wall_comments ? (byte) 1 : (byte) 0);
         dest.writeByte(is_banned ? (byte) 1 : (byte) 0);
         dest.writeByte(is_deleted ? (byte) 1 : (byte) 0);
@@ -908,6 +920,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         this.can_post = in.readByte() != 0;
         this.can_see_all_posts = in.readByte() != 0;
         this.can_write_private_message = in.readByte() != 0;
+        this.is_friend = in.readByte() != 0;
         this.wall_comments = in.readByte() != 0;
         this.is_banned = in.readByte() != 0;
         this.is_deleted = in.readByte() != 0;
