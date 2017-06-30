@@ -25,6 +25,7 @@ import com.vk.sdk.api.VKApiConst;
 import com.vk.sdk.api.VKParameters;
 import com.vk.sdk.api.VKParser;
 import com.vk.sdk.api.VKRequest;
+import com.vk.sdk.api.model.VKApiChat;
 import com.vk.sdk.api.model.VKApiGetDialogResponse;
 import com.vk.sdk.api.model.VKApiGetMessagesResponse;
 
@@ -78,6 +79,30 @@ public class VKApiMessages extends VKApiBase {
             @Override
             public Object createModel(JSONObject object) {
                 return new VKApiGetDialogResponse(object);
+            }
+        });
+    }
+
+    /**
+     * Returns chat
+     *
+     * @return Request for load
+     */
+    public VKRequest getChat() {
+        return getChat(VKParameters.from(/*VKApiConst.COUNT, "5"*/));
+    }
+
+    /**
+     * https://vk.com/dev/messages.getDialogs
+     *
+     * @param params use parameters from description with VKApiConst class
+     * @return Request for load
+     */
+    public VKRequest getChat(VKParameters params) {
+        return prepareRequest("getChat", params, new VKParser() {
+            @Override
+            public Object createModel(JSONObject object) {
+                return new VKApiChat(object);
             }
         });
     }
