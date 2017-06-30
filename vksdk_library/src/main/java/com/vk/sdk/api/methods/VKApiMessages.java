@@ -108,6 +108,16 @@ public class VKApiMessages extends VKApiBase {
         });
     }
 
+    /**
+    * https://vk.com/dev/messages.markAsRead
+    *
+    * @param params use parameters from description with VKApiConst class
+    * @return 1 for success
+    */
+    public VKRequest markAsRead(VKParameters params) {
+        return prepareRequest("markAsRead", params);
+    }
+
     @Override
     protected String getMethodsGroup() {
         return "messages";
