@@ -2,8 +2,7 @@ package com.vk.sdk.api.methods;
 
 import com.vk.sdk.api.VKParameters;
 import com.vk.sdk.api.VKRequest;
-import com.vk.sdk.api.model.VKApiModel;
-import com.vk.sdk.api.model.VkVideoArray;
+import com.vk.sdk.api.model.VKVideoArray;
 
 /**
  * Builds request for API.video part
@@ -20,7 +19,7 @@ public class VKApiVideo extends VKApiBase {
      * https://vk.com/dev/video.get
      */
     public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params, VkVideoArray.class);
+        return prepareRequest("get", params, VKVideoArray.class);
     }
 
     /*
@@ -62,14 +61,14 @@ public class VKApiVideo extends VKApiBase {
      * https://vk.com/dev/video.search
      */
     public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params, VkVideoArray.class);
+        return prepareRequest("search", params, VKVideoArray.class);
     }
 
     /*
      * https://vk.com/dev/video.getUserVideos
      */
     public VKRequest getUserVideos(VKParameters params) {
-        return prepareRequest("getUserVideos", params, VkVideoArray.class);
+        return prepareRequest("getUserVideos", params, VKVideoArray.class);
     }
 
     /*

@@ -9,7 +9,7 @@ import org.json.JSONObject;
  * Created by Lynnfield on 23.11.2015.
  */
 @SuppressWarnings({"unused", "WeakerAccess"})
-public class VkVideoArray extends VKList<VKApiVideo> {
+public class VKVideoArray extends VKList<VKApiVideo> {
     @Override
     public VKApiModel parse(JSONObject response) throws JSONException {
         fill(response, VKApiVideo.class);
@@ -17,20 +17,20 @@ public class VkVideoArray extends VKList<VKApiVideo> {
     }
 
     @SuppressWarnings("unused")
-    public VkVideoArray() {
+    public VKVideoArray() {
     }
 
-    public VkVideoArray(Parcel in) {
+    public VKVideoArray(Parcel in) {
         super(in);
     }
 
-    public static Creator<VkVideoArray> CREATOR = new Creator<VkVideoArray>() {
-        public VkVideoArray createFromParcel(Parcel source) {
-            return new VkVideoArray(source);
+    public static Creator<VKVideoArray> CREATOR = new Creator<VKVideoArray>() {
+        public VKVideoArray createFromParcel(Parcel source) {
+            return new VKVideoArray(source);
         }
 
-        public VkVideoArray[] newArray(int size) {
-            return new VkVideoArray[size];
+        public VKVideoArray[] newArray(int size) {
+            return new VKVideoArray[size];
         }
     };
 }
