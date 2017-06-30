@@ -46,6 +46,11 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
     public int id;
 
     /**
+     * Another chat ID
+     */
+    public int chat_id;
+
+    /**
      * Type of chat.
      */
     public String type;
@@ -73,6 +78,7 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
      */
     public VKApiChat parse(JSONObject source) {
         id = source.optInt("id");
+        chat_id = source.optInt("chat_id");
         type = source.optString("type");
         title = source.optString("title");
         admin_id = source.optInt("admin_id");
@@ -91,6 +97,7 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
      */
     public VKApiChat(Parcel in) {
         this.id = in.readInt();
+        this.chat_id = in.readInt();
         this.type = in.readString();
         this.title = in.readString();
         this.admin_id = in.readInt();
@@ -117,6 +124,7 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.id);
+        dest.writeInt(this.chat_id);
         dest.writeString(this.type);
         dest.writeString(this.title);
         dest.writeInt(this.admin_id);
@@ -137,6 +145,7 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
     public String toString() {
         return "VKApiChat{" +
                 "id=" + id +
+                ", chat_id=" + chat_id +
                 ", type='" + type + '\'' +
                 ", title='" + title + '\'' +
                 ", admin_id=" + admin_id +
