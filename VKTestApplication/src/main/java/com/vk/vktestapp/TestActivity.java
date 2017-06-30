@@ -103,7 +103,6 @@ public class TestActivity extends ActionBarActivity {
 									"online_mobile,lists,domain,has_mobile,contacts,connections,site,education," +
 									"universities,schools,can_post,can_see_all_posts,can_see_audio,can_write_private_message," +
 									"status,last_seen,common_count,relation,relatives,counters"));
-					request.secure = false;
 					request.useSystemLanguage = false;
 					startApiCall(request);
 				}
