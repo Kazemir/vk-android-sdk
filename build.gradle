@@ -12,9 +12,9 @@ allprojects {
     repositories {
         mavenCentral()
         jcenter()
-//        maven {
-//            url "https://oss.sonatype.org/content/groups/staging/"
-//        }
+        maven {
+            url "https://oss.sonatype.org/content/groups/staging/"
+        }
     }
 }
 
