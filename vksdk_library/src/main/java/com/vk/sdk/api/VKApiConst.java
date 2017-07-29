@@ -47,6 +47,8 @@ public class VKApiConst {
     public static final String RANDOM = "random";
     public static final String MOBILE = "mobile";
     public static final String NAME = "name";
+    public static final String NEED_VIEWED = "need_viewed";
+    public static final String NEED_MUTUAL = "need_mutual";
 
     //get users
     public static final String NAME_CASE = "name_case";
