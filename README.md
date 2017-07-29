@@ -1,6 +1,6 @@
 About this fork
 ==========
-To connect this library with your project, go to https://jitpack.io/#DiXL0f0S/vk-android-sdk/ and select latest release
+To connect this library with your project, go to https://jitpack.io/#DiXL0f0S/vk-android-sdk/ and select latest commit
 
 vk-android-sdk
 ==========
