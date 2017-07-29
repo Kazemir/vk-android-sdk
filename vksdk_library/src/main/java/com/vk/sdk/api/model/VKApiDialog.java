@@ -29,6 +29,9 @@
 package com.vk.sdk.api.model;
 
 import android.os.Parcel;
+
+import com.vk.sdk.api.VKApiConst;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -46,6 +49,10 @@ public class VKApiDialog extends VKApiModel implements Identifiable, android.os.
      * The first message dialog.
      */
     public VKApiMessage message;
+    /**
+     * Dialog type: with user, with community, or group chat
+     */
+    public int type;
 
 	public VKApiDialog(JSONObject from) throws JSONException
 	{
@@ -57,6 +64,13 @@ public class VKApiDialog extends VKApiModel implements Identifiable, android.os.
     public VKApiDialog parse(JSONObject from) throws JSONException {
         unread = from.optInt("unread");
         message = new VKApiMessage(from.optJSONObject("message"));
+        if (message.chat_id != 0){
+            type = VKApiConst.DIALOG_CHAT;
+        } else if (message.user_id < 0) {
+            type = VKApiConst.DIALOG_COMMUNITY;
+        } else {
+            type = VKApiConst.DIALOG_USER;
+        }
         return this;
     }
     /**
@@ -65,6 +79,7 @@ public class VKApiDialog extends VKApiModel implements Identifiable, android.os.
     public VKApiDialog(Parcel in) {
         this.unread = in.readInt();
         this.message = in.readParcelable(VKApiMessage.class.getClassLoader());
+        this.type = in.readInt();
     }
     /**
      * Creates empty Dialog instance.
@@ -86,6 +101,7 @@ public class VKApiDialog extends VKApiModel implements Identifiable, android.os.
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.unread);
         dest.writeParcelable(this.message, flags);
+        dest.writeInt(this.type);
     }
 
     public static Creator<VKApiDialog> CREATOR = new Creator<VKApiDialog>() {
@@ -103,6 +119,7 @@ public class VKApiDialog extends VKApiModel implements Identifiable, android.os.
         return "VKApiDialog{" +
                 "unread=" + unread +
                 ", message=" + message +
+                ", type=" + type +
                 '}';
     }
 }

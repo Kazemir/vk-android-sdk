@@ -70,6 +70,9 @@ public class VKApiConst {
     public static final String ACTION_PHOTO_UPDATE = "chat_photo_update";
     public static final String PEER_ID = "peer_id";
     public static final String MESSAGE_IDS = "message_ids";
+    public static final int DIALOG_USER = 0;
+    public static final int DIALOG_CHAT = 1;
+    public static final int DIALOG_COMMUNITY = 2;
 
     //Get subscriptions
     public static final String EXTENDED = "extended";
