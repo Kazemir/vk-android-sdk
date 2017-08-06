@@ -70,6 +70,13 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
      */
     public int[] users;
 
+    /**
+     * Chat image
+     */
+    public String photo_50;
+    public String photo_100;
+    public String photo_200;
+
 	public VKApiChat(JSONObject from) {
 		parse(from);
 	}
@@ -89,6 +96,9 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
                 this.users[i] = users.optInt(i);
             }
         }
+        photo_50 = source.optString("photo_50");
+        photo_100 = source.optString("photo_100");
+        photo_200 = source.optString("photo_200");
         return this;
     }
 
@@ -102,6 +112,9 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
         this.title = in.readString();
         this.admin_id = in.readInt();
         this.users = in.createIntArray();
+        this.photo_50 = in.readString();
+        this.photo_100 = in.readString();
+        this.photo_200 = in.readString();
     }
 
     /**
@@ -129,6 +142,9 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
         dest.writeString(this.title);
         dest.writeInt(this.admin_id);
         dest.writeIntArray(this.users);
+        dest.writeString(this.photo_50);
+        dest.writeString(this.photo_100);
+        dest.writeString(this.photo_200);
     }
 
     public static Creator<VKApiChat> CREATOR = new Creator<VKApiChat>() {
@@ -150,6 +166,9 @@ public class VKApiChat extends VKApiModel implements Identifiable, android.os.Pa
                 ", title='" + title + '\'' +
                 ", admin_id=" + admin_id +
                 ", users=" + Arrays.toString(users) +
+                ", photo_50='" + photo_50 + '\'' +
+                ", photo_100='" + photo_100 + '\'' +
+                ", photo_200='" + photo_200 + '\'' +
                 '}';
     }
 }
