@@ -101,6 +101,16 @@ public class VKApiMessages extends VKApiBase {
     }
 
     /**
+     * https://vk.com/dev/messages.getHistory
+     *
+     * @param params use parameters from description with VKApiConst class
+     * @return Request for load
+     */
+    public VKRequest getHistory(VKParameters params) {
+        return prepareRequest("getHistory", params);
+    }
+
+    /**
      * https://vk.com/dev/messages.getLongPollServer
      *
      * @param params use parameters from description with VKApiConst class
