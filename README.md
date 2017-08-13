@@ -1,8 +1,9 @@
 About this fork
 ==========
+This is an attempt to create an improved and fixed version of the VK SDK for Android.
 To connect this library with your project, go to https://jitpack.io/#DiXL0f0S/vk-android-sdk/ and select latest commit
 
-vk-android-sdk
+VK Android SDK
 ==========
 
 Library for working with VK API, authorization through VK app, using VK functions. Minimal version of Android is 2.3
@@ -71,7 +72,9 @@ SDK Initialization
 ```
 
 2) Initialize the SDK on startup using the following method. The best way is to call it in the app's onCreate method.
-`VKSdk.initialize(Context applicationContext);`
+```
+VKSdk.initialize(Context applicationContext);
+```
 
 User Authorization
 ----------
@@ -79,6 +82,8 @@ There are several authorization methods:
 
 ```
 VKSdk.login(Activity runningActivity, String... scope);
+```
+```
 VkSdk.login(Fragment runningFragment, String... scope);
 ```
 
@@ -134,10 +139,13 @@ API Requests
 Requests Syntax
 ----------
 1) Plain request.
-`VKRequest request = VKApi.users().get();`
+```
+VKRequest request = VKApi.users().get();
+```
 
 2) Request with parameters.
-`VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.USER_IDS, "1,2"));`
+```
+VKRequest request = VKApi.users().get(VKParameters.from(VKApiConst.USER_IDS, "1,2"));
 ```
 
 3) Request with predetermined maximum number of attempts.
@@ -150,7 +158,9 @@ request.attempts = 10;
 It will take 10 attempts until succeeds or an API error occurs. 
 
 4) Request that calls a method of VK API.
-`VKRequest request = new VKRequest("friends.get", VKParameters.from(VKApiConst.FIELDS, "sex,bdate,city"));`
+```
+VKRequest request = new VKRequest("friends.get", VKParameters.from(VKApiConst.FIELDS, "sex,bdate,city"));
+```
 
 5) Request for uploading photos on user wall.
 ```
@@ -197,7 +207,9 @@ VKRequest request4 = VKApi.uploadWallPhotoRequest(new VKUploadImage(photo4, VKIm
 ```
 
 2)  Combine created requests into one. 
-`VKBatchRequest batch = new VKBatchRequest(request1, request2, request3, request4);`
+```
+VKBatchRequest batch = new VKBatchRequest(request1, request2, request3, request4);
+```
 
 3) Load the obtained request.
 
