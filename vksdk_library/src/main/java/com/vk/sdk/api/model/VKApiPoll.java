@@ -89,7 +89,7 @@ public class VKApiPoll extends VKAttachments.VKApiAttachment implements android.
         question = source.optString("question");
         votes = source.optInt("votes");
         answer_id = source.optInt("answer_id");
-        answers = new VKList<Answer>(source.optJSONArray("answers"), Answer.class);
+        answers = new VKList<>(source.optJSONArray("answers"), Answer.class);
         return this;
     }
 

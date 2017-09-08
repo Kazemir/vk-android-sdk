@@ -96,7 +96,7 @@ public class VKJsonHelper {
      * @throws JSONException
      */
     public static Map<String, Object> toMap(JSONObject object) throws JSONException {
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<>();
         Iterator keys = object.keys();
         while (keys.hasNext()) {
             String key = (String) keys.next();

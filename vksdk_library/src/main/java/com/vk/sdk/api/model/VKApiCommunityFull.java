@@ -257,8 +257,8 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
         JSONObject status_audio = jo.optJSONObject("status_audio");
         if(status_audio != null) this.status_audio = new VKApiAudio().parse(status_audio);
 
-        contacts = new VKList<Contact>(jo.optJSONArray(CONTACTS), Contact.class);
-        links = new VKList<Link>(jo.optJSONArray(LINKS), Link.class);
+        contacts = new VKList<>(jo.optJSONArray(CONTACTS), Contact.class);
+        links = new VKList<>(jo.optJSONArray(LINKS), Link.class);
         fixed_post = jo.optInt(FIXED_POST);
         verified = ParseUtils.parseBoolean(jo, VERIFIED);
         blacklisted = ParseUtils.parseBoolean(jo, VERIFIED);

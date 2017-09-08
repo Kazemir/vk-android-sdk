@@ -1,12 +1,12 @@
 About this fork
 ==========
 This is an attempt to create an improved and fixed version of the VK SDK for Android.
-To connect this library with your project, go to https://jitpack.io/#DiXL0f0S/vk-android-sdk/ and select latest commit
+To connect this library with your project, select latest commit at https://jitpack.io/#DiXL0f0S/vk-android-sdk/
 
 VK Android SDK
 ==========
 
-Library for working with VK API, authorization through VK app, using VK functions. Minimal version of Android is 2.3
+Library for working with VK API, authorization through VK app, using VK functions. Minimal version of Android is 4.0
 
 Prepare for Using VK SDK
 ----------

@@ -90,6 +90,7 @@ public class VKServiceActivity extends Activity implements DialogInterface.OnDis
 
     /**
      * Starts login process with fragment
+     *
      * @param act       current running activity
      * @param scopeList authorization
      */
@@ -99,14 +100,7 @@ public class VKServiceActivity extends Activity implements DialogInterface.OnDis
         act.startActivityForResult(intent, VKServiceType.Authorization.getOuterCode());
     }
 
-    /**
-     * Starts login process with fragment
-     * warning: this method is available on SDK after honeycomb
-     *
-     * @param fr        current running fragment
-     * @param scopeList authorization
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+
     static void startLoginActivity(@NonNull Fragment fr, ArrayList<String> scopeList) {
         Intent intent = createIntent(fr.getActivity().getApplication(), VKServiceType.Authorization);
         intent.putStringArrayListExtra(KEY_SCOPE_LIST, scopeList);
@@ -147,65 +141,65 @@ public class VKServiceActivity extends Activity implements DialogInterface.OnDis
             VKSdk.customInitialize(this, 0, null);
         }
 
-		VKSdk.wakeUpSession(getApplicationContext());
+        VKSdk.wakeUpSession(getApplicationContext());
 
-		switch (getType()) {
-			case Authorization:
-				Intent intent;
-				final Context ctx = getApplicationContext();
-				Bundle bundle = new Bundle();
-				bundle.putString(VKOpenAuthDialog.VK_EXTRA_API_VERSION, VKSdk.getApiVersion());
-				bundle.putInt(VKOpenAuthDialog.VK_EXTRA_CLIENT_ID, VKSdk.getsCurrentAppId());
-				bundle.putBoolean(VKOpenAuthDialog.VK_EXTRA_REVOKE, true);
-				bundle.putString(VKOpenAuthDialog.VK_EXTRA_SCOPE, VKStringJoiner.join(getScopeList(), ","));
+        switch (getType()) {
+            case Authorization:
+                Intent intent;
+                final Context ctx = getApplicationContext();
+                Bundle bundle = new Bundle();
+                bundle.putString(VKOpenAuthDialog.VK_EXTRA_API_VERSION, VKSdk.getApiVersion());
+                bundle.putInt(VKOpenAuthDialog.VK_EXTRA_CLIENT_ID, VKSdk.getsCurrentAppId());
+                bundle.putBoolean(VKOpenAuthDialog.VK_EXTRA_REVOKE, true);
+                bundle.putString(VKOpenAuthDialog.VK_EXTRA_SCOPE, VKStringJoiner.join(getScopeList(), ","));
 
                 String[] fingerprints = VKUtil.getCertificateFingerprint(ctx, VK_APP_PACKAGE_ID);
 
-				if (VKUtil.isAppInstalled(ctx, VK_APP_PACKAGE_ID)
+                if (VKUtil.isAppInstalled(ctx, VK_APP_PACKAGE_ID)
                         && VKUtil.isIntentAvailable(ctx, VK_APP_AUTH_ACTION)
                         && fingerprints.length > 0
                         && fingerprints[0].equals(VK_APP_FINGERPRINT)) {
-					if (savedInstanceState == null) {
-						intent = new Intent(VK_APP_AUTH_ACTION, null);
+                    if (savedInstanceState == null) {
+                        intent = new Intent(VK_APP_AUTH_ACTION, null);
                         intent.setPackage(VK_APP_PACKAGE_ID);
-						intent.putExtras(bundle);
-						startActivityForResult(intent, VKServiceType.Authorization.getOuterCode());
-					}
-				} else {
-					new VKOpenAuthDialog().show(this, bundle, VKServiceType.Authorization.getOuterCode(), null);
-				}
-				break;
-			case Captcha:
-				VKError vkError = (VKError) VKObject.getRegisteredObject(getRequestId());
-				if (vkError != null) {
-					new VKCaptchaDialog(vkError).show(this, this);
-				} else {
-					finish();
-				}
-				break;
-			case Validation:
-				vkError = (VKError) VKObject.getRegisteredObject(getRequestId());
-				if (vkError != null) {
-					if (!TextUtils.isEmpty(vkError.redirectUri)
-							&& !vkError.redirectUri.contains("&ui=vk_sdk")
-							&& !vkError.redirectUri.contains("?ui=vk_sdk")){
-						if (vkError.redirectUri.indexOf('?') > 0) {
-							vkError.redirectUri += "&ui=vk_sdk";
-						} else {
-							vkError.redirectUri += "?ui=vk_sdk";
-						}
-					}
-					new VKOpenAuthDialog().show(this, new Bundle(), VKServiceType.Validation.getOuterCode(), vkError);
-				} else {
-					finish();
-				}
-				break;
-		}
-	}
+                        intent.putExtras(bundle);
+                        startActivityForResult(intent, VKServiceType.Authorization.getOuterCode());
+                    }
+                } else {
+                    new VKOpenAuthDialog().show(this, bundle, VKServiceType.Authorization.getOuterCode(), null);
+                }
+                break;
+            case Captcha:
+                VKError vkError = (VKError) VKObject.getRegisteredObject(getRequestId());
+                if (vkError != null) {
+                    new VKCaptchaDialog(vkError).show(this, this);
+                } else {
+                    finish();
+                }
+                break;
+            case Validation:
+                vkError = (VKError) VKObject.getRegisteredObject(getRequestId());
+                if (vkError != null) {
+                    if (!TextUtils.isEmpty(vkError.redirectUri)
+                            && !vkError.redirectUri.contains("&ui=vk_sdk")
+                            && !vkError.redirectUri.contains("?ui=vk_sdk")) {
+                        if (vkError.redirectUri.indexOf('?') > 0) {
+                            vkError.redirectUri += "&ui=vk_sdk";
+                        } else {
+                            vkError.redirectUri += "?ui=vk_sdk";
+                        }
+                    }
+                    new VKOpenAuthDialog().show(this, new Bundle(), VKServiceType.Validation.getOuterCode(), vkError);
+                } else {
+                    finish();
+                }
+                break;
+        }
+    }
 
-	public void onActivityResultPublic(int requestCode, int resultCode, Intent data) {
-		onActivityResult(requestCode, resultCode, data);
-	}
+    public void onActivityResultPublic(int requestCode, int resultCode, Intent data) {
+        onActivityResult(requestCode, resultCode, data);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -30,7 +30,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+@TargetApi(Build.VERSION_CODES.KITKAT)
 public class VKShareDialogNative extends DialogFragment implements VKShareDialogDelegate.DialogFragmentI {
 
 	private VKShareDialogDelegate mDelegate = new VKShareDialogDelegate(this);

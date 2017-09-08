@@ -123,7 +123,6 @@ public class VKShareDialogBuilder {
 		return this;
 	}
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	public void show(FragmentManager manager, String tag) {
 		new VKShareDialogNative(this).show(manager, tag);
 	}

@@ -143,7 +143,7 @@ public class ApiCallActivity extends AppCompatActivity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View v = inflater.inflate(R.layout.fragment_api_call, container, false);
-			textView = (TextView) v.findViewById(R.id.response);
+			textView = v.findViewById(R.id.response);
 			return v;
 		}
 	}
