@@ -193,7 +193,6 @@ public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
         this.photo_100 = in.readString();
         this.photo_200 = in.readString();
         this.photo = in.readParcelable(VKPhotoSizes.class.getClassLoader());
-        this.full_name = in.readString();
 
 	    this.photo_400_orig = in.readString();
 	    this.photo_max = in.readString();
@@ -207,8 +206,6 @@ public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
     public VKApiUser() {
 
     }
-
-    private String full_name;
 
     @Override
     public int describeContents() {
@@ -226,7 +223,6 @@ public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
         dest.writeString(this.photo_100);
         dest.writeString(this.photo_200);
         dest.writeParcelable(this.photo, flags);
-        dest.writeString(this.full_name);
 
 	    dest.writeString(this.photo_400_orig);
 	    dest.writeString(this.photo_max);
@@ -263,7 +259,6 @@ public class VKApiUser extends VKApiOwner implements android.os.Parcelable {
                 ", photo_max_orig='" + photo_max_orig + '\'' +
                 ", photo_big='" + photo_big + '\'' +
                 ", photo=" + photo +
-                ", full_name='" + full_name + '\'' +
                 '}';
     }
 }
