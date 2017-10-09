@@ -143,6 +143,13 @@ public class VKApiMessages extends VKApiBase {
     }
 
     /**
+     * https://vk.com/dev/messages.search
+     */
+    public VKRequest search(VKParameters params) {
+        return prepareRequest("search", params);
+    }
+
+    /**
      * https://vk.com/dev/messages.searchDialogs
      */
     public VKRequest searchDialogs() {
