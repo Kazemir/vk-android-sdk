@@ -142,6 +142,16 @@ public class VKApiMessages extends VKApiBase {
         return prepareRequest("markAsRead", params);
     }
 
+    /**
+     * https://vk.com/dev/messages.searchDialogs
+     */
+    public VKRequest searchDialogs() {
+        return prepareRequest("searchDialogs", null);
+    }
+    public VKRequest searchDialogs(VKParameters params) {
+        return prepareRequest("searchDialogs", params);
+    }
+
     @Override
     protected String getMethodsGroup() {
         return "messages";
