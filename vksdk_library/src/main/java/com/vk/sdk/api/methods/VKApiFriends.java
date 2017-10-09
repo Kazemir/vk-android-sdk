@@ -83,6 +83,14 @@ public class VKApiFriends extends VKApiBase {
         return prepareRequest("areFriends", params);
     }
 
+    public VKRequest search(VKParameters params) {
+        if (params.get("fields") != null) {
+            return prepareRequest("search", params, VKUsersArray.class);
+        } else {
+            return prepareRequest("search", params);
+        }
+    }
+
     @Override
     protected String getMethodsGroup() {
         return "friends";
