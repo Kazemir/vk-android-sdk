@@ -5,7 +5,7 @@ group='com.github.DiXL0f0S'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '26.0.1'
 
     defaultConfig {
         minSdkVersion 14
