@@ -53,6 +53,10 @@ public class VKApiGroups extends VKApiBase {
         return prepareRequest("search", params, VKApiCommunityArray.class);
     }
 
+    public VKRequest invite(VKParameters params) {
+        return prepareRequest("invite", params);
+    }
+
     public VKRequest getInvites(VKParameters params) {
         return prepareRequest("getInvites", params, VKApiCommunityArray.class);
     }
