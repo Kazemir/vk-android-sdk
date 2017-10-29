@@ -34,6 +34,7 @@ public class VKApiConst {
     public static final String OFFSET = "offset";
     public static final String COUNT = "count";
     public static final String OWNER_ID = "owner_id";
+    public static final String LIMIT = "limit";
 
     //auth
     public static final String VERSION = "v";
