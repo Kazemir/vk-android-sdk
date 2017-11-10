@@ -159,6 +159,13 @@ public class VKApiMessages extends VKApiBase {
         return prepareRequest("searchDialogs", params);
     }
 
+    /**
+     * https://vk.com/dev/messages.send
+     */
+    public VKRequest send(VKParameters params) {
+        return prepareRequest("send", params);
+    }
+
     @Override
     protected String getMethodsGroup() {
         return "messages";
