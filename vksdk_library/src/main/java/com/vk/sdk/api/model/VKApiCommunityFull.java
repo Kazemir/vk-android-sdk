@@ -128,6 +128,11 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
     public final static String ACTIVITY = "activity";
 
     /**
+     * Filed trending from VK fields set
+     */
+    public final static String TRENDING = "trending";
+
+    /**
      * City specified in information about community.
      */
     public VKApiCity city;
@@ -222,6 +227,11 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
      */
     public boolean blacklisted;
 
+    /**
+     * Information whether the community has a "fire" pictogram.
+     */
+    public boolean trending;
+
     public VKApiCommunityFull() {
         super();
     }
@@ -261,8 +271,9 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
         links = new VKList<>(jo.optJSONArray(LINKS), Link.class);
         fixed_post = jo.optInt(FIXED_POST);
         verified = ParseUtils.parseBoolean(jo, VERIFIED);
-        blacklisted = ParseUtils.parseBoolean(jo, VERIFIED);
+        blacklisted = ParseUtils.parseBoolean(jo, BLACKLISTED);
         site = jo.optString(SITE);
+        trending = ParseUtils.parseBoolean(jo, TRENDING);
         return this;
     }
 
@@ -477,6 +488,7 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
         dest.writeByte(verified ? (byte) 1 : (byte) 0);
         dest.writeString(this.site);
         dest.writeByte(blacklisted ? (byte) 1 : (byte) 0);
+        dest.writeByte(trending ? (byte) 1 : (byte) 0);
     }
 
     public VKApiCommunityFull(Parcel in) {
@@ -500,6 +512,7 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
         this.verified = in.readByte() != 0;
         this.site = in.readString();
         this.blacklisted = in.readByte() != 0;
+        this.trending = in.readByte() != 0;
     }
 
     public static Creator<VKApiCommunityFull> CREATOR = new Creator<VKApiCommunityFull>() {
@@ -534,6 +547,7 @@ public class VKApiCommunityFull extends VKApiCommunity implements Parcelable {
                 ", verified=" + verified +
                 ", site='" + site + '\'' +
                 ", blacklisted=" + blacklisted +
+                ", trending=" + trending +
                 '}';
     }
 }

@@ -198,6 +198,11 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
     public static final String BLACKLISTED_BY_ME = "blacklisted_by_me";
 
     /**
+     * Filed trending from VK fields set
+     */
+    public final static String TRENDING = "trending";
+
+    /**
      * Text of user status.
      */
     public String activity;
@@ -454,6 +459,11 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
      */
     public boolean blacklisted_by_me;
 
+    /**
+     * Information whether the user has a "fire" pictogram.
+     */
+    public boolean trending;
+
 	public VKApiUserFull(JSONObject from) throws JSONException
 	{
 		parse(from);
@@ -540,6 +550,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         is_banned = "banned".equals(deactivated);
         wall_default_owner = "owner".equals(user.optString(WALL_DEFAULT));
         verified = parseBoolean(user, VERIFIED);
+        trending = parseBoolean(user, TRENDING);
 
         // other
         sex = user.optInt(SEX);
@@ -818,7 +829,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         public static final String GRANDCHILD = "grandchild";
         public static final String GRANDPARENT = "grandparent";
         public static final String CHILD = "child";
-        public static final String SUBLING = "sibling";
+        public static final String SIBLING = "sibling";
         public static final String PARENT = "parent";
     }
 
@@ -879,6 +890,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         dest.writeInt(this.relation);
         dest.writeParcelable(this.relatives, flags);
         dest.writeByte(blacklisted_by_me ? (byte) 1 : (byte) 0);
+        dest.writeByte(trending ? (byte) 1 : (byte) 0);
     }
     public VKApiUserFull() {}
     public VKApiUserFull(Parcel in) {
@@ -932,6 +944,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
         this.relation = in.readInt();
         this.relatives = in.readParcelable(VKList.class.getClassLoader());
         this.blacklisted_by_me = in.readByte() != 0;
+        this.trending = in.readByte() != 0;
     }
 
     public static Creator<VKApiUserFull> CREATOR = new Creator<VKApiUserFull>() {
@@ -996,6 +1009,7 @@ public class VKApiUserFull extends VKApiUser implements android.os.Parcelable {
                 ", relation=" + relation +
                 ", relatives=" + relatives +
                 ", blacklisted_by_me=" + blacklisted_by_me +
+                ", trending=" + trending +
                 '}';
     }
 }

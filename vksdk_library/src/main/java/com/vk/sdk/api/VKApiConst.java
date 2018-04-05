@@ -69,6 +69,8 @@ public class VKApiConst {
     public static final String ACTION_CREATE = "chat_create";
     public static final String ACTION_PHOTO_REMOVE = "chat_photo_remove";
     public static final String ACTION_PHOTO_UPDATE = "chat_photo_update";
+    public static final String ACTION_PIN_MESSAGE = "chat_pin_message";
+    public static final String ACTION_UNPIN_MESSAGE = "chat_unpin_message";
     public static final String PEER_ID = "peer_id";
     public static final String MESSAGE_IDS = "message_ids";
     public static final int DIALOG_USER = 0;
