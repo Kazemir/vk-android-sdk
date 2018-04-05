@@ -71,6 +71,7 @@ public class VKApiConst {
     public static final String ACTION_PHOTO_UPDATE = "chat_photo_update";
     public static final String ACTION_PIN_MESSAGE = "chat_pin_message";
     public static final String ACTION_UNPIN_MESSAGE = "chat_unpin_message";
+    public static final String ACTION_INVITE_USER_BY_LINK = "chat_invite_user_by_link";
     public static final String PEER_ID = "peer_id";
     public static final String MESSAGE_IDS = "message_ids";
     public static final int DIALOG_USER = 0;

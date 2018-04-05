@@ -103,6 +103,11 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
     */
     public String action;
 
+    /**
+     * 	Date (in Unix time) when the message was updated last time.
+     */
+    public long update_time;
+
 	public VKApiMessage(JSONObject from) throws JSONException
 	{
 		parse(from);
@@ -124,6 +129,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
         deleted = ParseUtils.parseBoolean(source, "deleted");
         chat_id = source.optInt("chat_id");
         action = source.optString("action");
+        update_time = source.optLong("update_time");
         return this;
     }
 
@@ -144,6 +150,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
         this.deleted = in.readByte() != 0;
         this.chat_id = in.readInt();
         this.action = in.readString();
+        this.update_time = in.readLong();
     }
 
     /**
@@ -178,6 +185,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
         dest.writeByte(deleted ? (byte) 1 : (byte) 0);
         dest.writeInt(this.chat_id);
         dest.writeString(this.action);
+        dest.writeLong(this.update_time);
     }
 
     public static Creator<VKApiMessage> CREATOR = new Creator<VKApiMessage>() {
@@ -196,6 +204,7 @@ public class VKApiMessage extends VKApiModel implements Identifiable, android.os
                 "id=" + id +
                 ", user_id=" + user_id +
                 ", date=" + date +
+                ", update_time=" + update_time +
                 ", read_state=" + read_state +
                 ", out=" + out +
                 ", title='" + title + '\'' +

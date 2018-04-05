@@ -143,6 +143,11 @@ public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifi
      */
     public VKList<VKApiPost> copy_history;
 
+    /**
+     * Access key for private object.
+     */
+    public String access_key;
+
 	public VKApiPost(JSONObject from) throws JSONException
 	{
 		parse(from);
@@ -184,6 +189,7 @@ public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifi
         }
         signer_id = source.optInt("signer_id");
         copy_history = new VKList<>(source.optJSONArray("copy_history"), VKApiPost.class);
+        access_key = source.optString("access_key");
         return this;
     }
 
@@ -211,6 +217,7 @@ public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifi
         this.attachments = in.readParcelable(VKAttachments.class.getClassLoader());
         this.geo = in.readParcelable(VKApiPlace.class.getClassLoader());
         this.signer_id = in.readInt();
+        this.access_key = in.readString();
     }
 
     /**
@@ -262,6 +269,7 @@ public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifi
         dest.writeParcelable(attachments, flags);
         dest.writeParcelable(this.geo, flags);
         dest.writeInt(this.signer_id);
+        dest.writeString(this.access_key);
     }
 
     public static Creator<VKApiPost> CREATOR = new Creator<VKApiPost>() {
@@ -298,6 +306,7 @@ public class VKApiPost extends VKAttachments.VKApiAttachment implements Identifi
                 ", geo=" + geo +
                 ", signer_id=" + signer_id +
                 ", copy_history=" + copy_history +
+                ", access_key=" + access_key +
                 '}';
     }
 }
